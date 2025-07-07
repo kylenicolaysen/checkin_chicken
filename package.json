@@ -1,0 +1,27 @@
+{
+  "name": "checkin_chicken",
+  "version": "1.0.0",
+  "description": "bawk bawk",
+  "homepage": "https://github.com/kylenicolaysen/checkin_chicken#readme",
+  "bugs": {
+    "url": "https://github.com/kylenicolaysen/checkin_chicken/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylenicolaysen/checkin_chicken.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --env-file=.env server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "express-session": "^1.18.1",
+    "sqlite": "^5.1.1"
+  }
+}
