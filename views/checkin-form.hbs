@@ -1,7 +1,22 @@
-<h2>Where ya goin?</h2>
-<form method="POST" action="/create-checkin">
-  <input name="location" required placeholder="e.g. Hiking in Boulder">
-  <label>Return time: <input type="time" name="return_time" required></label><br>
-  <label>Emergency email: <input type="email" name="emergency_contact_email" required></label><br>
-  <button type="submit">Submit</button>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('checkinForm')
+        const tzInput = document.getElementById('timezone')
+        const timeInput = document.getElementById('localTime')
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+        const currentTime = new Date().toString()
+
+        tzInput.value = timezone;
+        timeInput.value = currentTime
+    })
+</script>
+<h2>Let someone know you're lost!</h2>
+<form id="checkinForm" method="POST" action="/create-checkin">
+    <input type="hidden" name="timezone" id="timezone">
+    <input type="hidden" name="localTime" id="localTime">
+    <label>Destination: <input name="location" required placeholder="e.g. Hiking in Boulder"></label><br>
+    <label>Return time: <input type="time" name="return_time" required></label><br>
+    <label>Emergency email: <input type="email" name="emergency_contact_email" required></label><br>
+    <label>Your email: <input type="email" name="checkin_user_email"></label><br>
+    <button type="submit">Submit</button>
 </form>
